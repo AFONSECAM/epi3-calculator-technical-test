@@ -25,13 +25,13 @@ El objetivo de este repo es servir como punto de partida para extenderlo durante
    git clone https://github.com/AFONSECAM/epi3-calculator-technical-test.git
    ```
 
-2. Ingresa al directorio del proyecto:
+2. Ingresar al directorio del proyecto:
 
    ```bash
    cd epi3-calculator-technical-test
    ```
 
-3. Instala las dependencias:
+3. Instalar las dependencias:
 
    ```bash
    npm install
