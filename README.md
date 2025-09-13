@@ -1,69 +1,86 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 📱Calculator App (React + TypeScript)
 
-Currently, two official plugins are available:
+## 📖 Descripción
+Este proyecto es una versión base de una calculadora en React + TypeScript.
+Incluye la estructura principal (pantalla y botones) y las operaciones básicas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+El objetivo de este repo es servir como punto de partida para extenderlo durante la entrevista técnica.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 Requisitos previos
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js >= 16  
+- npm
+- Git  
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Instalación
+
+1. Clonar repositorio:
+
+   ```bash
+   git clone https://github.com/AFONSECAM/epi3-calculator-technical-test.git
+   ```
+
+2. Ingresa al directorio del proyecto:
+
+   ```bash
+   cd epi3-calculator-technical-test
+   ```
+
+3. Instala las dependencias:
+
+   ```bash
+   npm install
+   ```
+---
+
+## ▶️ Ejecución en desarrollo
+
+Para ejecutar la aplicación en modo desarrollo:
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Luego abrir en el navegador:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+http://localhost:5173
+```
+
+---
+
+## ⚡ Funcionalidades
+
+- Suma, resta, multiplicación y división  
+- Borrar todo (AC)  
+- Resultado con el botón (=)  
+
+---
+
+## 📂 Estructura del proyecto
+```bash
+src/
+├── App.tsx          # Componente principal
+├── main.tsx         # Punto de entrada
+assets/
+├── index.css         # Estilos globales
+├── ButtonPanel.css   # Estilos panel de botones
+├── Display.css       # Estilos del display
+components/
+├── ButtonPanel.tsx  # Panel con botones de números y operaciones
+├── Display.tsx      # Pantalla de la calculadora
+```
+
+## ✨ Autor
+Andres Fonseca
+
+
+---
+
+## 📜 Licencia
+Este proyecto está bajo la licencia **MIT**.
