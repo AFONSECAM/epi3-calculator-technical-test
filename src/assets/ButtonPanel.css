@@ -1,0 +1,42 @@
+.button-panel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+  grid-gap: 8px;
+  padding: 10px;
+}
+
+.btn {
+  font-size: 1.4rem;
+  padding: 20px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn:active {
+  opacity: 0.7;
+}
+
+/* Colores */
+.dark {
+  background: #333;
+  color: white;
+}
+
+.gray {
+  background: #a5a5a5;
+  color: black;
+}
+
+.orange {
+  background: orange;
+  color: white;
+}
+
+.zero {
+  grid-column: span 2;
+  border-radius: 30px;
+  text-align: left;
+  padding-left: 30px;
+}
