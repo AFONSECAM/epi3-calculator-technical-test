@@ -4,15 +4,16 @@ interface ButtonPanelProps {
   onOperatorClick: (op: string) => void;
   onEqualClick: () => void;
   onClear: () => void;
+  onSquare: () => void;
 }
 
-function ButtonPanel({ onNumberClick, onOperatorClick, onEqualClick, onClear}: ButtonPanelProps) {
+function ButtonPanel({ onNumberClick, onOperatorClick, onEqualClick, onClear, onSquare}: ButtonPanelProps) {
   return (
     <div className="button-panel">
       {/* Primera fila */}
       <button className="btn gray" onClick={onClear}>AC</button>
       <button className="btn gray" onClick={() => alert("Proximamente")}>+/-</button>
-      <button className="btn gray" onClick={() => alert("Proximamente")}>x²</button>
+      <button className="btn gray" onClick={onSquare}>x²</button>
       <button className="btn orange" onClick={() => onOperatorClick("÷")}>÷</button>
 
       {/* Segunda fila */}

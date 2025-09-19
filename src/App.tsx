@@ -16,8 +16,12 @@ function App() {
   const [waitingForSecondValue, setWaitingForSecondValue] = useState<boolean>(false);
 
   const handleNumberClick = (num: string) => {
-    if (waitingForSecondValue) {
-      setDisplayValue(num);
+    if (waitingForSecondValue) {  
+      if(!operator){
+        setDisplayValue(num);
+        setFirstValue(parseFloat(num));
+      }
+      setDisplayValue(num);      
       setWaitingForSecondValue(false);    
     } else {
       setDisplayValue(displayValue === "0" ? num : displayValue + num);
@@ -26,23 +30,28 @@ function App() {
 
   const handleOperatorClick = (nextOperator: string) => {
     if (firstValue == null) {
-      setFirstValue(parseFloat(displayValue));
+      setFirstValue(parseFloat(displayValue));            
+      setWaitingForSecondValue(true);
     } else if (operator) {
       const result = calculate(firstValue, parseFloat(displayValue), operator);
       setDisplayValue(String(result));
       setFirstValue(result);
     }
-    setOperator(nextOperator);
-    setWaitingForSecondValue(true);    
+    setOperator(nextOperator);      
   };
 
-  const handleEqualClick = () => {
+  const handleEqualClick = () => {   
+    console.log(waitingForSecondValue);
+    if(waitingForSecondValue){
+      setDisplayValue(String(firstValue));     
+      return;
+    }
     if (operator && firstValue != null) {
       const result = calculate(firstValue, parseFloat(displayValue), operator);
-      setDisplayValue(String(result));
+      setDisplayValue(String(result));      
       setFirstValue(result);
       setOperator(null);
-      setWaitingForSecondValue(true);      
+      setWaitingForSecondValue(true);     
     }
   };
 
@@ -68,6 +77,13 @@ function App() {
     }
   };
 
+  const handleSquare = () => {
+    const value = parseFloat(displayValue);
+    const squared = value * value;
+    setDisplayValue(String(squared));
+    setFirstValue(squared);
+  }
+
   return (
     <div className="calculator">
       <Display value={displayValue} />
@@ -75,7 +91,8 @@ function App() {
         onNumberClick={handleNumberClick}
         onOperatorClick={handleOperatorClick}
         onEqualClick={handleEqualClick}
-        onClear={handleClear}     
+        onClear={handleClear}  
+        onSquare={handleSquare}   
       />
     </div>
   );
